@@ -4,7 +4,7 @@ import {
   Card,
   Button,
   Row,
-  Col
+  Col,
 } from 'react-bootstrap';
 
 import { useQuery, useMutation } from '@apollo/client'

@@ -41,7 +41,7 @@ const resolvers = {
         },
 
         //allows user to save books
-        saveBook: async (parent, args, context) => {
+        saveBook: async (parent, { book }, context) => {
             if (context.user) {
                 return User.findOneAndUpdate(
                     {_id: context.user._id},
@@ -53,7 +53,7 @@ const resolvers = {
         },
 
         //allows user to remove saved books
-        removeBook: async (parents, args, context) => {
+        removeBook: async (parents, { bookId }, context) => {
             if (context.user) {
                 return User.findOneAndUpdate(
                     {_id: context.user._id},

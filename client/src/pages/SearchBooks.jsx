@@ -24,7 +24,8 @@ const SearchBooks = () => {
 
   const { loading, data } = useQuery(QUERY_ME);
 
-  const userData = data?.me || data?.user || {};
+  const userData = data?.me
+  // const userData = data?.me || data?.user || {};
 
   // create state to hold saved bookId values
   const [savedBookIds, setSavedBookIds] = useState(
@@ -39,6 +40,7 @@ const SearchBooks = () => {
   // learn more here: https://reactjs.org/docs/hooks-effect.html#effects-with-cleanup
 
   useEffect(() => {
+    console.log('savedBookIds: ', saveBookIds)
     return () => saveBookIds(savedBookIds);
   });
 
